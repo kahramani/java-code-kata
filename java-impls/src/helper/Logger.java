@@ -29,7 +29,7 @@ public class Logger {
     }
 
     public <T extends CharSequence> void result(T t) {
-        System.out.println("Result: " + t);
+        System.out.println(t);
     }
 
     public void end() {
