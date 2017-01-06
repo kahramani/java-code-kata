@@ -9,9 +9,9 @@ import java.util.Scanner;
  * --------------------------------------------------------------------------------------------------------------------
  *
  * Question Owner   : https://www.hackerrank.com/
- * Question Id      : Solve Me First (https://www.hackerrank.com/challenges/solve-me-first)
+ * Id/URL           : Solve Me First (https://www.hackerrank.com/challenges/solve-me-first)
  * Difficulty       : Easy (marked by them)
- * Solution By      : Java 1.7
+ * Solution In      : Java 1.7
  *
  * --------------------------------------------------------------------------------------------------------------------
  *
@@ -25,11 +25,13 @@ import java.util.Scanner;
 public class solveMeFirst {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc = new Scanner(new FileReader(args[0]));
+        Scanner sc = new Scanner(new FileReader(args[0])); // default file --> inputs/solveMeFirst-default.txt
         Logger logger = new Logger(solveMeFirst.class);
         logger.start();
-        int result = solveMeFirst(sc.nextInt(), sc.nextInt());
-        logger.result(Integer.toString(result));
+        int first = sc.nextInt();
+        int second = sc.nextInt();
+        int result = solveMeFirst(first, second);
+        logger.result(first + "+" + second + " = " + Integer.toString(result));
         logger.end();
     }
 
