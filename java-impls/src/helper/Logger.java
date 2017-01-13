@@ -28,7 +28,7 @@ public class Logger {
         this.chronometer.start();
     }
 
-    public <T extends CharSequence> void result(T t) {
+    public <T extends CharSequence> void print(T t) {
         System.out.println(t);
     }
 
