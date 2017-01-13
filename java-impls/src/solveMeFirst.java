@@ -1,4 +1,5 @@
 import helper.Logger;
+import util.Validation;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -21,17 +22,20 @@ import java.util.Scanner;
  * 2. Sum them up
  * 3. Print the result
  *
+ * Run command example: java SolveMeFirst inputs/solveMeFirst-default.txt
  */
-public class solveMeFirst {
+public class SolveMeFirst {
 
     public static void main(String[] args) throws FileNotFoundException {
+        Validation.checkArgument(args, 0, Validation.MESSAGE_MISSING_FILE +
+                " Example: java SolveMeFirst {input-file-path}");
         Scanner sc = new Scanner(new FileReader(args[0])); // default file --> inputs/solveMeFirst-default.txt
-        Logger logger = new Logger(solveMeFirst.class);
+        Logger logger = new Logger(SolveMeFirst.class);
         logger.start();
         int first = sc.nextInt();
         int second = sc.nextInt();
         int result = solveMeFirst(first, second);
-        logger.result(first + "+" + second + " = " + Integer.toString(result));
+        logger.print(first + "+" + second + " = " + Integer.toString(result));
         logger.end();
     }
 

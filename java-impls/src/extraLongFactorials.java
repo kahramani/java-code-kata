@@ -1,4 +1,5 @@
 import helper.Logger;
+import util.Validation;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,17 +23,20 @@ import java.util.Scanner;
  * 2. Calculate factorial
  * 3. Print the result
  *
+ * Run command example: java ExtraLongFactorials inputs/extraLongFactorials-default.txt
  */
-public class extraLongFactorials {
+public class ExtraLongFactorials {
 
     public static void main(String[] args) throws FileNotFoundException {
+        Validation.checkArgument(args, 0, Validation.MESSAGE_MISSING_FILE +
+                " Example: java ExtraLongFactorials {input-file-path}");
         Scanner sc = new Scanner(new FileReader(args[0])); // default file --> inputs/extraLongFactorials-default.txt
-        Logger logger = new Logger(extraLongFactorials.class);
+        Logger logger = new Logger(ExtraLongFactorials.class);
         logger.start();
         while(sc.hasNext()) {
             int n = sc.nextInt();
             BigInteger result = calculateFactorial(n);
-            logger.result(n + "! = " + result.toString());
+            logger.print(n + "! = " + result.toString());
         }
         logger.end();
     }

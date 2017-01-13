@@ -1,4 +1,5 @@
 import helper.Logger;
+import util.Validation;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -33,17 +34,20 @@ import java.util.Scanner;
  *         ut
  * Result: clu hlt io
  *
+ * Run command example: java Encryption inputs/encryption-default.txt
  */
-public class encryption {
+public class Encryption {
 
     public static void main(String[] args) throws FileNotFoundException {
+        Validation.checkArgument(args, 0, Validation.MESSAGE_MISSING_FILE +
+                " Example: java Encryption {input-file-path}");
         Scanner sc = new Scanner(new FileReader(args[0])); // default file --> inputs/encryption-default.txt
-        Logger logger = new Logger(encryption.class);
+        Logger logger = new Logger(Encryption.class);
         logger.start();
 
         while(sc.hasNextLine()) {
             String sentence = sc.nextLine();
-            logger.result(sentence + " -> " + encrypt(sentence));
+            logger.print(sentence + " -> " + encrypt(sentence));
         }
 
         logger.end();
