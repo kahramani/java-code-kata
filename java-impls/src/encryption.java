@@ -51,8 +51,6 @@ public class Encryption {
         }
 
         logger.end();
-        if(sc != null)
-            sc.close();
     }
 
     private static String encrypt(String sentence) {

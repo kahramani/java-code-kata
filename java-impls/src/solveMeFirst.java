@@ -37,8 +37,6 @@ public class SolveMeFirst {
         int result = solveMeFirst(first, second);
         logger.print(first + "+" + second + " = " + Integer.toString(result));
         logger.end();
-        if(sc != null)
-            sc.close();
     }
 
     private static int solveMeFirst(int a, int b) {
