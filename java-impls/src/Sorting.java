@@ -63,6 +63,8 @@ public class Sorting {
         logger.print("Sorted array: " + Arrays.toString(ar));
         logger.print("Size: " + ar.length + ", Type: " + sortType);
         logger.end();
+        if(sc != null)
+            sc.close();
     }
 
     private static Integer[] buildArray(Scanner sc) {
