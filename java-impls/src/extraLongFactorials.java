@@ -39,6 +39,8 @@ public class ExtraLongFactorials {
             logger.print(n + "! = " + result.toString());
         }
         logger.end();
+        if(sc != null)
+            sc.close();
     }
 
     private static BigInteger calculateFactorial(int n) {
